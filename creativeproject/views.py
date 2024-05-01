@@ -121,7 +121,10 @@ def singleproduct(request, pk):
 
 
 def watch(request):
-    return render(request, 'watch.html')
+    watch_category = CategoryModel.objects.get(category_title='Watch')
+    watch_products = ProductModel.objects.filter(product_category=watch_category)
+    context = {'products': watch_products}
+    return render(request, 'watch.html', context)
 
 
 def necklaces(request):
@@ -138,15 +141,29 @@ def necklaces(request):
 
 
 def earrings(request):
-    return render(request, 'earrings.html')
+    earrings_category = CategoryModel.objects.get(category_title='Earrings')
+    earrings_products = ProductModel.objects.filter(product_category=earrings_category)
+    context = {'products': earrings_products}
+    return render(request, 'earrings.html', context)
 
 
 def rings(request):
-    return render(request, 'rings.html')
+    rings_category = CategoryModel.objects.get(category_title='Rings')
+    rings_products = ProductModel.objects.filter(product_category=rings_category)
+    context = {'products': rings_products}
+    return render(request, 'rings.html', context)
 
 
 def bracelets(request):
-    return render(request, 'bracelets.html')
+    bracelets_category = CategoryModel.objects.get(category_title='Braceletes')
+    bracelets_products = ProductModel.objects.filter(product_category=bracelets_category)
+    context = {'products': bracelets_products}
+    return render(request, 'bracelets.html', context)
+
+
+
+
+
 
 # def product_detail(request, product_id):
 #     product = ProductModel.objects.filter_by(id=product_id)
