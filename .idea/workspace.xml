@@ -17,6 +17,7 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
