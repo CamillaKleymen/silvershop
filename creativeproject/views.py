@@ -155,7 +155,7 @@ def rings(request):
 
 
 def bracelets(request):
-    bracelets_category = CategoryModel.objects.get(category_title='Braceletes')
+    bracelets_category = CategoryModel.objects.get(category_title='Bracelets')
     bracelets_products = ProductModel.objects.filter(product_category=bracelets_category)
     context = {'products': bracelets_products}
     return render(request, 'bracelets.html', context)
